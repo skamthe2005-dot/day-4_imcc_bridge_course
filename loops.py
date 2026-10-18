@@ -63,7 +63,7 @@ for i in range(1,x+1):
     print()
 
 
-# add the two no's at third position of the list and append in name in the list and split
+
 
 
         
