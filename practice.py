@@ -1,56 +1,112 @@
-# x=input(str("enter string here:"))
+class node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
 
-# y=(x.count("a","i","e"))
-# z=(x.count("o","u"))
+class stack:
+    def __init__(self):
+        self.top=None
 
-# print(y+z)
+    def push(self,node):
+        if self.top==None:
+            self.top=node
+            return 
+        else:
+            node.next=self.top
+            self.top=node
 
-# text="ha "
-# print(text-3)
+    def pop(self):
+        if self.top==None:
+            print("stack is empty")
+            return
+        else:
+            topcopy=self.top
+            self.top=self.top.next
+            topcopy.next=None
+        return topcopy.data
 
-# print("occurance of 'a'in name is ",x.count("a"))
-# print(x.replace("a","z"))
-# print(sorted(x))
+    def reverse_string(self,value):
+        for i in value:
+            self.push(node(i))
+        return
+            # if self.top==None:
+            #     self.top=i
+            #     return
+            # for j in value:
+            #     j.next=self.top
+            #     self.top=j
+            # while self.top !=None:
+            #     print(self.pop())
 
-# x=[10,20,30,40]
-# print(x[0])
-# x.append(40)
-# x.remove(40)
-# x.pop()
-
-# print(len(x))
-# print(sum(x))
-
-# print(sorted(x,reverse=True))
-# print(sorted(x))
-
-# create list of 10 no's and display the sum of last 4 elements
-# x=[10,20,30,40,50,60,70,80,90,100]
-# print(x[6]+x[7]+x[8]+x[9])
-
-# remove the items from the list located at 2nd and 5th position
-# x.remove(x[2])
-# print(x)
-
-# x.remove(x[5])
-# print(x)
-
-
-# # print the diff between highest and smallest no of list
-# a=x[0]
-# b=x[-1]
-# print(a-b)
-
-
-# append a new element in the list which is half of the item of third position in list
-
-
-# print sum of first 10 even no's
-
-sum=0
-for  i in range(21):
-    if i%2==0:
-        sum+=i
-print(sum)
+    def rev_stack(self,prevstack):
+        s2=stack()
+        while prevstack.top!=None:
+            x=prevstack.pop()
+            s2.push(node(x))
+        s2.print()
 
 
+
+
+    # def reverse_stack():
+    #     while s:
+    #         x=s.pop()
+    #         if s2.top==None:
+    #             s2.top=node(x)
+    #             return
+    #         else:
+    #             node(x).next=s2.top
+    #             s2.top=node(x) 
+    #     return s2
+        
+    def print(self):
+        temp=self.top
+        while temp:
+            print(temp.data)
+            temp=temp.next
+
+
+
+
+s=stack()
+# s2=stack()
+# s.push(node(10))
+# s.push(node(20))
+# s.push(node(30))
+# s.push(node(40))
+# s.reverse_string("saurav")
+# print(s.pop())
+# s.print()
+# s.rev_stack(s)
+
+# def reverse_stack():
+#     while s:
+#         x=s.pop()
+#         if s2.top==None:
+#             s2.top.next=node(x)
+#             s2.top=node(x)
+#         else:
+#             node(x).next=s2.top
+#             s2.top=node(x)
+        
+#     return s2
+    
+
+# print(reverse_stack())
+# print(reverse_stack())
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+     
